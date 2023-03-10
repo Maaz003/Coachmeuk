@@ -1,9 +1,9 @@
 import React, {useState, useRef} from 'react';
 import {View, StyleSheet, Keyboard} from 'react-native';
-import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {useDispatch} from 'react-redux';
 import {login} from '@store/auth/authSlice';
 import {URL} from '@config/apiUrl';
+import ScrollContainer from '@components/view/screens/ScrollContainer';
 import FormValidation from '@components/utils/FormValidation';
 import Text from '@components/common/Text';
 import AuthBoiler from '@components/layout/authHeader/AuthBoiler';
@@ -11,8 +11,8 @@ import Toast from '@components/common/Toast';
 import TextInput from '@components/common/TextInput';
 import Button from '@components/common/Button';
 import R from '@components/utils/R';
-import OrDivider from '@components/common/OrDivider';
 import AuthSwitch from '@components/common/AuthSwitch';
+import {EmailIcon, LockIcon} from '@components/utils/Svg';
 
 function LoginScreen(props) {
   const {navigation} = props;
@@ -71,38 +71,39 @@ function LoginScreen(props) {
 
   return (
     <AuthBoiler {...props} headerProps={headerProps}>
-      <KeyboardAwareScrollView
-        style={[R.styles.container, styles.mainLayout]}
-        showsVerticalScrollIndicator={false}
-        keyboardShouldPersistTaps="always"
-        contentContainerStyle={{
-          flexGrow: 1,
-          justifyContent: 'flex-start',
-          alignItems: 'center',
-          flexDirection: 'column',
-        }}>
-        <View style={styles.formView}>
+      <ScrollContainer showAuthHeader={true} paddingBottom={40}>
+        <View style={styles.contentView}>
           <Text
-            variant={'h3'}
-            font={'RalewayMedium'}
+            variant={'h1'}
+            font={'RalewayExtraBold'}
             gutterTop={10}
-            gutterBottom={R.unit.scale(24)}
             color={R.color.black}
+            align={'left'}
+            transform={'none'}>
+            Login
+          </Text>
+          <Text
+            variant={'body4'}
+            font={'RalewayMedium'}
+            gutterTop={20}
+            color={R.color.gray}
             align={'left'}
             style={{width: '100%'}}
             transform={'none'}>
-            Welcome back
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
           </Text>
 
           <TextInput
             secureText={false}
-            title={'Email'}
             onChangeText={text => {
               setAuthUser({...authUser, email: text});
             }}
             color={R.color.black}
+            placeholder={'Email Address'}
             value={authUser?.email}
-            gutterBottom={24}
+            gutterTop={20}
+            widthInPercentage={'100%'}
             returnKeyType={'next'}
             forwardedRef={emailField}
             onSubmitEditing={() => {
@@ -111,23 +112,35 @@ function LoginScreen(props) {
             formError={errorField?.email}
             formErrorText={errorField?.email}
             iconName={'close'}
-            iconType={'MaterialIcons'}
+            customLeftIcon={
+              <View style={{paddingLeft: R.unit.scale(13)}}>
+                <EmailIcon />
+              </View>
+            }
           />
           <TextInput
             secureText={true}
-            title={'Password'}
             onChangeText={text => {
               setAuthUser({...authUser, password: text});
             }}
+            placeholder={'Password'}
             forwardedRef={passwordField}
             onSubmitEditing={() => {
               Keyboard.dismiss();
             }}
+            gutterTop={12}
+            widthInPercentage={'100%'}
             color={R.color.black}
             value={authUser?.password}
             gutterBottom={32}
             isRightTitle={true}
             formError={errorField?.password}
+            iconName={'close'}
+            customLeftIcon={
+              <View style={styles.lockSvg}>
+                <LockIcon height="100%" width="100%" />
+              </View>
+            }
             formErrorText={errorField?.password}
             backgroundColor={'white'}
           />
@@ -147,31 +160,42 @@ function LoginScreen(props) {
           />
 
           <AuthSwitch
-            screen={'SelectRole'}
+            screen={'Signup'}
             text="Don’t have an account?"
             linkText="Get started"
             textColor={R.color.mainColor2}
             iconColor={R.color.mainColor2}
+            containerStyles={{justifyContent: 'center'}}
           />
         </View>
-      </KeyboardAwareScrollView>
+      </ScrollContainer>
     </AuthBoiler>
   );
 }
 export default LoginScreen;
 
 const styles = StyleSheet.create({
-  mainLayout: {
-    backgroundColor: R.color.white,
-    paddingHorizontal: 0,
-  },
-  formView: {
+  contentView: {
     paddingHorizontal: R.unit.scale(16),
-    width: '100%',
+    width: '90%',
     justifyContent: 'center',
-    alignItems: 'center',
     paddingVertical: R.unit.scale(10),
-    marginTop: R.unit.scale(84),
+    backgroundColor: R.color.white,
+    marginTop: R.unit.scale(-80),
+    borderRadius: R.unit.scale(5),
+    overflow: 'hidden',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
   },
-  socialButtonsLayout: {marginTop: R.unit.scale(16), width: '100%'},
+  lockSvg: {
+    paddingLeft: R.unit.scale(13),
+    aspectRatio: 1,
+    height: R.unit.scale(25),
+  },
 });

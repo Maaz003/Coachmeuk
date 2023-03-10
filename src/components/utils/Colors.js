@@ -7,7 +7,7 @@ const color = {
   black: '#222222',
   hyperLinkColor: '#4D55E5',
   secondaryColor: '#314ACE',
-  gray: '#717171',
+  gray: '#9B9B9B',
   gray2: '#EDEDED',
   gray3: '#595857',
   gray4: '#DDDDDD',

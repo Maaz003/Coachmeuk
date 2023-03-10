@@ -10,10 +10,8 @@ import R from '@components/utils/R';
 import Text from '@components/common/Text';
 import Icon from '@components/common/Icon';
 import CoachesList from '@components/view/screens/ToDo/CoachesList';
-import {StudentRoleIcon} from '@components/utils/Svg';
 import {coachLists, coachTags} from '@components/constants';
 import Divider from '@components/common/Divider';
-import ToDoErrorDisplay from '@components/view/screens/ToDo/ToDoErrorDisplay';
 
 function StudentProfileScreen(props) {
   const {navigation} = props;
@@ -206,16 +204,7 @@ function StudentProfileScreen(props) {
           <View
             style={{
               marginTop: R.unit.scale(80),
-            }}>
-            <ToDoErrorDisplay
-              icon={<StudentRoleIcon width="100%" height="100%" />}
-              heading={'Kate has no coaches yet'}
-              isFooter={false}
-              text={
-                'As soon as the student passes the first training session, the coach from whom she passed it will appear here.'
-              }
-            />
-          </View>
+            }}></View>
         ) : (
           <>
             {coachLists?.map((item, index, arr) => {

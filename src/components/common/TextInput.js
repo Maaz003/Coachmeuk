@@ -91,42 +91,20 @@ const TextInput = props => {
         },
         containerStyles,
       ]}>
-      {title && (
-        <View style={{...R.styles.rowView, marginBottom: R.unit.scale(8)}}>
-          <View style={R.styles.twoItemsRow}>
-            <Text
-              variant={'body3'}
-              font={'InterRegular'}
-              color={titleColor ? titleColor : R.color.gray}
-              align={'left'}
-              transform={'none'}>
-              {title}{' '}
-            </Text>
-
-            {isSubTitle && (
-              <>
-                {subTitleIcon ? (
-                  <View
-                    style={{
-                      paddingLeft: R.unit.scale(8),
-                    }}>
-                    {subTitleIcon}
-                  </View>
-                ) : (
-                  <Text
-                    variant={'body3'}
-                    font={'InterRegular'}
-                    color={R.color.bracketsTextColor}
-                    align={'left'}
-                    transform={'none'}>
-                    {' '}
-                    {subTitle}
-                  </Text>
-                )}
-              </>
-            )}
-          </View>
-          {isRightTitle && <HoverText onPress={onPress} />}
+      {isRightTitle && (
+        <View
+          style={{
+            ...R.styles.rowView,
+            justifyContent: 'flex-end',
+            marginBottom: R.unit.scale(8),
+          }}>
+          {isRightTitle && (
+            <HoverText
+              onPress={onPress}
+              textColor={R.color.mainColor2}
+              iconColor={R.color.mainColor2}
+            />
+          )}
         </View>
       )}
       <View
@@ -164,7 +142,7 @@ const TextInput = props => {
                   {
                     color: iconColor,
                     fontSize: moderateScale(18, 0.6),
-                    paddingLeft: iconName && R.unit.scale(16),
+                    paddingLeft: iconName && R.unit.scale(12),
                   },
                   leftIconStyles,
                 ]}
@@ -324,11 +302,11 @@ const styles = ScaledSheet.create({
     borderRadius: R.unit.scale(10),
   },
   inputBox: {
-    paddingHorizontal: R.unit.scale(16, 0.6),
+    paddingHorizontal: R.unit.scale(12, 0.3),
     paddingVertical: Platform.OS === 'ios' ? 0 : R.unit.scale(12, 0.6),
-    fontSize: R.unit.scale(16),
+    fontSize: R.unit.scale(13),
     textAlign: 'left',
-    fontFamily: 'Inter-Regular',
+    fontFamily: 'Raleway-Medium',
     flex: 1,
   },
 });

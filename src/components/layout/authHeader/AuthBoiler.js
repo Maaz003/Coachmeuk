@@ -1,7 +1,7 @@
-import R from '@components/utils/R';
 import React from 'react';
-import {StyleSheet, StatusBar, SafeAreaView} from 'react-native';
+import {StyleSheet, StatusBar, SafeAreaView, View} from 'react-native';
 import AuthHeaderComponent from './AuthHeaderComponent';
+import R from '@components/utils/R';
 
 export default function AuthBoiler(props) {
   const {navigation, children, headerProps} = props;
@@ -21,16 +21,21 @@ export default function AuthBoiler(props) {
           headerProps={headerProps}
         />
       )}
+
       {children}
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  mainLayout: {
+    backgroundColor: R.color.green,
+    paddingHorizontal: 0,
+  },
   background: {
     flex: 1,
     width: R.unit.width(1),
-    backgroundColor: R.color.white,
+    backgroundColor: R.color.green,
     alignItems: 'center',
   },
 });

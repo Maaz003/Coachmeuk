@@ -4,13 +4,11 @@ import {
   TouchableOpacity,
   I18nManager,
   ActivityIndicator,
-  View,
 } from 'react-native';
 import {Icon} from 'native-base';
 import {scale} from 'react-native-size-matters';
 import Text from './Text';
 import R from '@components/utils/R';
-import {FacebookIcon, GoogleIcon} from '@components/utils/Svg';
 
 const Button = props => {
   const sizes = {
@@ -76,11 +74,7 @@ const Button = props => {
           ]}
         />
       )}
-      {isSocial && (
-        <View style={styles.iconCustom}>
-          {socialType === 'facebook' ? <FacebookIcon /> : <GoogleIcon />}
-        </View>
-      )}
+
       <Text
         style={[
           styles.buttonText,
