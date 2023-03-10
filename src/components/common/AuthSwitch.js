@@ -6,16 +6,16 @@ import HoverText from './HoverText';
 import navigation from '@components/navigation/navigationService';
 
 const AuthSwitch = props => {
-  const {screen, text, linkText, textColor, iconColor} = props;
+  const {screen, text, linkText, textColor, iconColor, containerStyles} = props;
   const navigateScreen = () => {
     navigation.navigate(screen);
   };
 
   return (
-    <View style={styles.mainLayout}>
+    <View style={[styles.mainLayout, containerStyles]}>
       <Text
         variant={'body3'}
-        font={'InterRegular'}
+        font={'RalewayMedium'}
         color={R.color.black}
         align={'center'}
         style={{marginRight: R.unit.scale(2)}}

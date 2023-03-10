@@ -1,9 +1,11 @@
+//ALL AUTH ICONS
+export {default as Logo} from '@assets/Images/Svgs/Logo.svg';
+export {default as EmailIcon} from '@assets/Images/Svgs/EmailIcon.svg';
+export {default as LockIcon} from '@assets/Images/Svgs/LockIcon.svg';
+export {default as UserIcon} from '@assets/Images/Svgs/UserIcon.svg';
 export {default as HeaderBackIcon} from '@assets/Images/Svgs/HeaderBackIcon.svg';
+
 export {default as EyeHideIcon} from '@assets/Images/Svgs/EyeHideIcon.svg';
-export {default as FacebookIcon} from '@assets/Images/Svgs/FacebookIcon.svg';
-export {default as GoogleIcon} from '@assets/Images/Svgs/GoogleIcon.svg';
-export {default as StudentRoleIcon} from '@assets/Images/Svgs/StudentRoleIcon.svg';
-export {default as CoachRoleIcon} from '@assets/Images/Svgs/CoachRoleIcon.svg';
 export {default as UploadPhotoIcon} from '@assets/Images/Svgs/UploadPhotoIcon.svg';
 export {default as EditPencilIcon} from '@assets/Images/Svgs/EditPencilIcon.svg';
 export {default as TrashIcon} from '@assets/Images/Svgs/TrashIcon.svg';

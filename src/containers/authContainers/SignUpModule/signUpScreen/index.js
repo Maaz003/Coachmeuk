@@ -4,8 +4,6 @@ import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import AuthBoiler from '@components/layout/authHeader/AuthBoiler';
 import Button from '@components/common/Button';
 import TextInput from '@components/common/TextInput';
-import Toast from '@components/common/Toast';
-import validators from '@components/utils/Validators';
 import R from '@components/utils/R';
 import AuthSwitch from '@components/common/AuthSwitch';
 import FormValidation from '@components/utils/FormValidation';
