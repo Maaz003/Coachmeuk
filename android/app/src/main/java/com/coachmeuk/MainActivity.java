@@ -1,7 +1,7 @@
 package com.coachmeuk;
-
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
+import org.devio.rn.splashscreen.SplashScreen;
 import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint;
 import com.facebook.react.defaults.DefaultReactActivityDelegate;
 
@@ -23,6 +23,7 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected ReactActivityDelegate createReactActivityDelegate() {
+    SplashScreen.show(this);
     return new DefaultReactActivityDelegate(
         this,
         getMainComponentName(),

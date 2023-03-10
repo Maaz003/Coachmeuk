@@ -30,6 +30,9 @@ import Icon from '@components/common/Icon';
 import {MenuProvider} from 'react-native-popup-menu';
 
 const App = () => {
+  useEffect(() => {
+    SplashScreen.hide(); //hides the splash screen on app load.
+  }, []);
   LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
   LogBox.ignoreLogs(['EventEmitter.removeListener']); // Ignore log notification by message
   LogBox.ignoreAllLogs(); //Ignore all log notifications
