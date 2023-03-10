@@ -5,6 +5,13 @@ export {default as LockIcon} from '@assets/Images/Svgs/LockIcon.svg';
 export {default as UserIcon} from '@assets/Images/Svgs/UserIcon.svg';
 export {default as HeaderBackIcon} from '@assets/Images/Svgs/HeaderBackIcon.svg';
 
+//BOTTOM TAB ICON
+export {default as HomeTabIcon} from '@assets/Images/Svgs/HomeTabIcon.svg';
+export {default as UsersTabIcon} from '@assets/Images/Svgs/UsersTabIcon.svg';
+export {default as FilesTabIcon} from '@assets/Images/Svgs/FilesTabIcon.svg';
+export {default as ChatTabIcon} from '@assets/Images/Svgs/ChatTabIcon.svg';
+export {default as MoreTabIcon} from '@assets/Images/Svgs/MoreTabIcon.svg';
+
 export {default as EyeHideIcon} from '@assets/Images/Svgs/EyeHideIcon.svg';
 export {default as UploadPhotoIcon} from '@assets/Images/Svgs/UploadPhotoIcon.svg';
 export {default as EditPencilIcon} from '@assets/Images/Svgs/EditPencilIcon.svg';
@@ -26,13 +33,6 @@ export {default as LeftSharpArrowIcon} from '@assets/Images/Svgs/LeftSharpArrowI
 export {default as RightSharpArrowIcon} from '@assets/Images/Svgs/RightSharpArrowIcon.svg';
 export {default as BalloonsIcon} from '@assets/Images/Svgs/BalloonsIcon.svg';
 export {default as LogoHeader} from '@assets/Images/Svgs/LogoHeader.svg';
-
-//BOTTOM TAB ICON
-export {default as ToDoTabIcon} from '@assets/Images/Svgs/ToDoTabIcon.svg';
-export {default as BookingsTabIcon} from '@assets/Images/Svgs/BookingsTabIcon.svg';
-export {default as MessageTabIcon} from '@assets/Images/Svgs/MessageTabIcon.svg';
-export {default as NotificationTabIcon} from '@assets/Images/Svgs/NotificationTabIcon.svg';
-export {default as UserTabIcon} from '@assets/Images/Svgs/UserTabIcon.svg';
 
 //STUDENT TAB ICON
 export {default as SearchTabIcon} from '@assets/Images/Svgs/SearchTabIcon.svg';

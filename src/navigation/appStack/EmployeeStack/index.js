@@ -6,13 +6,13 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import R from '@components/utils/R';
 import {navigationRef} from '@components/navigation/navigationService';
 import {
-  BookingsTabIcon,
-  MessageTabIcon,
-  NotificationTabIcon,
-  UserTabIcon,
+  UsersTabIcon,
+  ChatTabIcon,
+  FilesTabIcon,
+  MoreTabIcon,
+  HomeTabIcon,
 } from '@components/utils/Svg';
 import Text from '@components/common/Text';
-import Icon from '@components/common/Icon';
 
 //EXPLORE MODULE
 import ExploreScreen from '@containers/appContainers/EmployeeFlow/ExploreModule';
@@ -71,13 +71,11 @@ const EmployeeStack = () => {
             options={{
               tabBarIcon: ({focused}) => (
                 <View style={styles.tab}>
-                  <View style={{...styles.svgView, marginTop: -2}}>
-                    <Icon
-                      type={'Ionicons'}
-                      name={'md-search-outline'}
-                      color={focused ? R.color.mainColor : R.color.gray}
-                      size={30}
-                      iconStyles={{marginBottom: 2}}
+                  <View style={styles.svgView}>
+                    <HomeTabIcon
+                      stroke={focused ? R.color.mainColor : R.color.gray}
+                      width="100%"
+                      height="100%"
                     />
                   </View>
 
@@ -101,7 +99,7 @@ const EmployeeStack = () => {
               tabBarIcon: ({focused}) => (
                 <View style={styles.tab}>
                   <View style={styles.svgView}>
-                    <BookingsTabIcon
+                    <UsersTabIcon
                       stroke={focused ? R.color.mainColor : R.color.gray}
                       width="100%"
                       height="100%"
@@ -133,7 +131,7 @@ const EmployeeStack = () => {
                       marginTop: 1,
                       height: R.unit.scale(29),
                     }}>
-                    <NotificationTabIcon
+                    <FilesTabIcon
                       stroke={focused ? R.color.mainColor : R.color.gray}
                       width="100%"
                       height="100%"
@@ -160,7 +158,7 @@ const EmployeeStack = () => {
               tabBarIcon: ({focused}) => (
                 <View style={styles.tab}>
                   <View style={{...styles.svgView, height: R.unit.scale(29)}}>
-                    <MessageTabIcon
+                    <ChatTabIcon
                       stroke={focused ? R.color.mainColor : R.color.gray}
                       width="100%"
                       height="100%"
@@ -186,7 +184,7 @@ const EmployeeStack = () => {
               tabBarIcon: ({focused}) => (
                 <View style={styles.tab}>
                   <View style={styles.svgView}>
-                    <UserTabIcon
+                    <MoreTabIcon
                       stroke={focused ? R.color.mainColor : R.color.gray}
                       fill={focused ? R.color.mainColor : R.color.gray}
                       width="100%"

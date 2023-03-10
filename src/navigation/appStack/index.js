@@ -5,6 +5,6 @@ import EmployeeStack from './EmployeeStack';
 
 const AppStack = () => {
   const auth = useSelector(state => state.auth);
-  return false ? <CompanyStack /> : <EmployeeStack />;
+  return true ? <CompanyStack /> : <EmployeeStack />;
 };
 export default AppStack;

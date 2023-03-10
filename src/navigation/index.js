@@ -5,8 +5,8 @@ import AuthStack from './authStack';
 
 const AppNavigator = () => {
   const auth = useSelector(state => state.auth);
-  // let isLogin = true;
-  let isLogin = auth?.isAuth;
+  let isLogin = true;
+  // let isLogin = auth?.isAuth;
 
   return isLogin ? <AppStack /> : <AuthStack />;
 };

@@ -6,11 +6,11 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import R from '@components/utils/R';
 import {navigationRef} from '@components/navigation/navigationService';
 import {
-  BookingsTabIcon,
-  MessageTabIcon,
-  NotificationTabIcon,
-  ToDoTabIcon,
-  UserTabIcon,
+  HomeTabIcon,
+  UsersTabIcon,
+  FilesTabIcon,
+  ChatTabIcon,
+  MoreTabIcon,
 } from '@components/utils/Svg';
 import Text from '@components/common/Text';
 import {useSelector} from 'react-redux';
@@ -80,54 +80,35 @@ const CompanyStack = () => {
               tabBarIcon: ({focused}) => (
                 <View style={styles.tab}>
                   <View style={styles.svgView}>
-                    <ToDoTabIcon
+                    <HomeTabIcon
                       stroke={focused ? R.color.mainColor : R.color.gray}
                       width="100%"
                       height="100%"
                     />
                   </View>
-                  <Text
-                    variant={'body5'}
-                    font={focused ? 'InterSemiBold' : 'interRegular'}
-                    gutterTop={4}
-                    color={focused ? R.color.black : R.color.gray}
-                    align={'center'}
-                    transform={'none'}>
-                    To do
-                  </Text>
                 </View>
               ),
             }}
           />
           <Tab.Screen
-            name="ScheduleTab"
+            name="UsersTab"
             component={ScheduleStackNavigator}
             options={{
               tabBarIcon: ({focused}) => (
                 <View style={styles.tab}>
-                  <View style={styles.svgView}>
-                    <BookingsTabIcon
+                  <View style={{...styles.svgView, height: 30}}>
+                    <UsersTabIcon
                       stroke={focused ? R.color.mainColor : R.color.gray}
                       width="100%"
                       height="100%"
                     />
                   </View>
-                  <Text
-                    variant={'body5'}
-                    font={focused ? 'InterSemiBold' : 'interRegular'}
-                    gutterTop={4}
-                    color={focused ? R.color.black : R.color.gray}
-                    align={'center'}
-                    style={{width: '100%'}}
-                    transform={'none'}>
-                    Schedule
-                  </Text>
                 </View>
               ),
             }}
           />
           <Tab.Screen
-            name="Notifications"
+            name="LeavesTab"
             component={NotificationsStackNavigator}
             options={{
               tabBarIcon: ({focused}) => (
@@ -136,77 +117,49 @@ const CompanyStack = () => {
                     style={{
                       ...styles.svgView,
                       marginTop: 1,
-                      height: R.unit.scale(29),
+                      // height: R.unit.scale(29),
                     }}>
-                    <NotificationTabIcon
+                    <FilesTabIcon
                       stroke={focused ? R.color.mainColor : R.color.gray}
                       width="100%"
                       height="100%"
                     />
                   </View>
-                  <Text
-                    variant={'body5'}
-                    font={focused ? 'InterSemiBold' : 'interRegular'}
-                    gutterTop={3}
-                    color={focused ? R.color.black : R.color.gray}
-                    align={'center'}
-                    transform={'none'}>
-                    Notifications
-                  </Text>
                 </View>
               ),
             }}
           />
 
           <Tab.Screen
-            name="Inbox"
+            name="ChatTab"
             component={MessagesStackNavigator}
             options={{
               tabBarIcon: ({focused}) => (
                 <View style={styles.tab}>
-                  <View style={{...styles.svgView, height: R.unit.scale(29)}}>
-                    <MessageTabIcon
+                  <View style={{...styles.svgView}}>
+                    <ChatTabIcon
                       stroke={focused ? R.color.mainColor : R.color.gray}
                       width="100%"
                       height="100%"
                     />
                   </View>
-                  <Text
-                    variant={'body5'}
-                    font={focused ? 'InterSemiBold' : 'interRegular'}
-                    gutterTop={4}
-                    color={focused ? R.color.black : R.color.gray}
-                    align={'center'}
-                    transform={'none'}>
-                    Inbox
-                  </Text>
                 </View>
               ),
             }}
           />
           <Tab.Screen
-            name="ProfileTab"
+            name="MoreTab"
             component={ProfileStackNavigator}
             options={{
               tabBarIcon: ({focused}) => (
                 <View style={styles.tab}>
                   <View style={styles.svgView}>
-                    <UserTabIcon
+                    <MoreTabIcon
                       stroke={focused ? R.color.mainColor : R.color.gray}
-                      fill={focused ? R.color.mainColor : R.color.gray}
                       width="100%"
                       height="100%"
                     />
                   </View>
-                  <Text
-                    variant={'body5'}
-                    font={focused ? 'InterSemiBold' : 'interRegular'}
-                    gutterTop={4}
-                    color={focused ? R.color.black : R.color.gray}
-                    align={'center'}
-                    transform={'none'}>
-                    Profile
-                  </Text>
                 </View>
               ),
             }}
@@ -333,11 +286,10 @@ const styles = StyleSheet.create({
   },
   svgView: {
     aspectRatio: 1,
-    height: R.unit.scale(29),
-    // backgroundColor: 'green',
+    height: R.unit.scale(27),
   },
   tab: {
-    width: R.unit.width(0.19),
+    padding: R.unit.scale(10),
     alignItems: 'center',
   },
 });
