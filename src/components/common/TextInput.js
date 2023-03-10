@@ -299,7 +299,7 @@ const styles = ScaledSheet.create({
     backgroundColor: R.color.white,
     borderWidth: R.unit.scale(1),
     borderBottomWidth: R.unit.scale(1),
-    borderRadius: R.unit.scale(10),
+    borderRadius: R.unit.scale(5),
   },
   inputBox: {
     paddingHorizontal: R.unit.scale(12, 0.3),

@@ -20,7 +20,7 @@ const color = {
   disabledButtonTextColor: '#717171',
   selectedVerticalLineColor: '#4D55E5',
   bracketsTextColor: '#B5B5B5',
-  inputFieldBordercolor: '#DDDDDD',
+  inputFieldBordercolor: '#EFEFEF',
   inputFieldErrorMessageColor: '#DB1A2D',
 
   red: 'red',
