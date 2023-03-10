@@ -1,0 +1,43 @@
+import React from 'react';
+import {StyleSheet, View} from 'react-native';
+import R from '@components/utils/R';
+import Text from './Text';
+import Radio from './Radio';
+
+const RadioButtonLine = props => {
+  const {
+    text,
+    onPress,
+    containerStyles,
+    selected,
+    textColor = R.color.black,
+    textContainerStyles,
+  } = props;
+  return (
+    <View style={[R.styles.twoItemsRow, styles.policyView, containerStyles]}>
+      <Radio selected={selected} onPress={onPress} />
+      <View
+        style={{
+          flexDirection: 'row',
+          // marginLeft: R.unit.scale(12),
+          flex: 1,
+          ...textContainerStyles,
+        }}>
+        <Text
+          variant={'body2'}
+          font={'InterRegular'}
+          color={textColor}
+          align={'left'}
+          transform={'none'}>
+          {text}
+        </Text>
+      </View>
+    </View>
+  );
+};
+export default RadioButtonLine;
+const styles = StyleSheet.create({
+  policyView: {
+    marginTop: R.unit.scale(8),
+  },
+});
