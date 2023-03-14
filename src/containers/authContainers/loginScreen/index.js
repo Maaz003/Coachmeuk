@@ -3,7 +3,7 @@ import {View, StyleSheet, Keyboard} from 'react-native';
 import {useDispatch} from 'react-redux';
 import {login} from '@store/auth/authSlice';
 import {URL} from '@config/apiUrl';
-import ScrollContainer from '@components/view/screens/ScrollContainer';
+import FormScrollContainer from '@components/view/screens/FormScrollContainer';
 import FormValidation from '@components/utils/FormValidation';
 import Text from '@components/common/Text';
 import AuthBoiler from '@components/layout/authHeader/AuthBoiler';
@@ -71,7 +71,7 @@ function LoginScreen(props) {
 
   return (
     <AuthBoiler {...props} headerProps={headerProps}>
-      <ScrollContainer showAuthHeader={true} paddingBottom={40}>
+      <FormScrollContainer showAuthHeader={true} paddingBottom={40}>
         <View style={styles.contentView}>
           <Text
             variant={'h1'}
@@ -168,7 +168,7 @@ function LoginScreen(props) {
             containerStyles={{justifyContent: 'center'}}
           />
         </View>
-      </ScrollContainer>
+      </FormScrollContainer>
     </AuthBoiler>
   );
 }

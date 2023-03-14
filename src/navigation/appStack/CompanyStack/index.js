@@ -12,16 +12,15 @@ import {
   ChatTabIcon,
   MoreTabIcon,
 } from '@components/utils/Svg';
-import Text from '@components/common/Text';
-import {useSelector} from 'react-redux';
+
+//HOME STACK
+import HomeScreen from '@containers/appContainers/CompanyFlow/homeModule/HomeScreen';
+
+//EMPLOYEES LISING STACK
+import EmployeesListScreen from '@containers/appContainers/CompanyFlow/ScheduleModule/EmployeesListScreen';
 
 //COACH ON BOARDING
 import ProfileScreen from '@containers/appContainers/CompanyFlow/profileModule/ProfileScreen';
-import ProfileStepsScreen from '@containers/appContainers/CompanyFlow/homeModule/ProfileStepsScreen';
-import ToDoScreen from '@containers/appContainers/CompanyFlow/homeModule/ToDoScreen';
-import EvaluationScreen from '@containers/appContainers/CompanyFlow/homeModule/ToDoScreen/EvaluationScreen';
-import UpdateEvaluationScreen from '@containers/appContainers/CompanyFlow/homeModule/ToDoScreen/UpdateEvaluationScreen';
-import ScheduleScreen from '@containers/appContainers/CompanyFlow/ScheduleModule/ScheduleScreen';
 import NotificationScreen from '@containers/appContainers/CompanyFlow/NotificationModule/NotificationScreen';
 import ReviewsScreen from '@containers/appContainers/CompanyFlow/profileModule/ReviewsModule/ReviewsScreen';
 
@@ -33,11 +32,8 @@ import EditLessonScreen from '@containers/appContainers/CompanyFlow/profileModul
 import SettingsScreen from '@containers/appContainers/CompanyFlow/profileModule/SettingsSubModule';
 import PricingInfo from '@containers/appContainers/CompanyFlow/profileModule/EditLessonSubModule/PricingInfo';
 import SupportChat from '@components/view/screens/Notifications/SupportChat';
-import StudentProfileScreen from '@containers/appContainers/CompanyFlow/homeModule/StudentProfileScreen';
 import SeasonalStaticsScreen from '@containers/appContainers/CompanyFlow/profileModule/InsightsSubModule/SeasonalStaticsScreen';
 import InsightsScreen from '@containers/appContainers/CompanyFlow/profileModule/InsightsSubModule';
-import LessonDetailsScreen from '@containers/appContainers/CompanyFlow/homeModule/LessonDetailsScreen';
-import ScheduleAvailabilityScreen from '@containers/appContainers/CompanyFlow/ScheduleModule/AvailabilityScreen';
 
 //*********STUDENT FLOW***********//
 
@@ -45,7 +41,6 @@ const CompanyStack = () => {
   const Stack = createNativeStackNavigator();
   const CoachStack = createNativeStackNavigator();
   const Tab = createBottomTabNavigator();
-  const auth = useSelector(state => state.auth);
 
   //COACH TAB
   const CompayTabNavigator = () => {
@@ -92,7 +87,7 @@ const CompanyStack = () => {
           />
           <Tab.Screen
             name="UsersTab"
-            component={ScheduleStackNavigator}
+            component={EmployeeStackNavigator}
             options={{
               tabBarIcon: ({focused}) => (
                 <View style={styles.tab}>
@@ -109,7 +104,7 @@ const CompanyStack = () => {
           />
           <Tab.Screen
             name="LeavesTab"
-            component={NotificationsStackNavigator}
+            component={LeavesStackNvigator}
             options={{
               tabBarIcon: ({focused}) => (
                 <View style={styles.tab}>
@@ -132,7 +127,7 @@ const CompanyStack = () => {
 
           <Tab.Screen
             name="ChatTab"
-            component={MessagesStackNavigator}
+            component={ChatStack}
             options={{
               tabBarIcon: ({focused}) => (
                 <View style={styles.tab}>
@@ -176,37 +171,29 @@ const CompanyStack = () => {
         screenOptions={{
           headerShown: false,
         }}
-        initialRouteName={'ToDo'}>
-        <Stack.Screen name="ToDo" component={ToDoScreen} />
-        <Stack.Screen name="ProfileSteps" component={ProfileStepsScreen} />
-        <Stack.Screen name="EvaluationScreen" component={EvaluationScreen} />
-        <Stack.Screen name="StudentProfile" component={StudentProfileScreen} />
-        <Stack.Screen name="LessonDetails" component={LessonDetailsScreen} />
-        <Stack.Screen
-          name="UpdateEvaluation"
-          component={UpdateEvaluationScreen}
-        />
+        initialRouteName={'Home'}>
+        <Stack.Screen name="Home" component={HomeScreen} />
       </Stack.Navigator>
     );
   };
 
-  const ScheduleStackNavigator = props => {
+  const EmployeeStackNavigator = props => {
     return (
       <Stack.Navigator
         screenOptions={{
           headerShown: false,
         }}
-        initialRouteName={'Schedule'}>
-        <Stack.Screen name="Schedule" component={ScheduleScreen} />
+        initialRouteName={'EmployeesList'}>
+        <Stack.Screen name="EmployeesList" component={EmployeesListScreen} />
         <Stack.Screen
-          name="ScheduleAvailability"
-          component={ScheduleAvailabilityScreen}
+          name="EmployeeProfile"
+          component={EmployeeProfileScreen}
         />
       </Stack.Navigator>
     );
   };
 
-  const NotificationsStackNavigator = props => {
+  const LeavesStackNvigator = props => {
     return (
       <Stack.Navigator
         screenOptions={{
@@ -219,7 +206,7 @@ const CompanyStack = () => {
     );
   };
 
-  const MessagesStackNavigator = props => {
+  const ChatStack = props => {
     return (
       <Stack.Navigator
         screenOptions={{

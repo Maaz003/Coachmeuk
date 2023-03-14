@@ -5,7 +5,7 @@ import R from '@components/utils/R';
 import Text from '@components/common/Text';
 import Button from '@components/common/Button';
 
-function ToDoErrorDisplay(props) {
+function EmptyListError(props) {
   const {
     icon,
     heading,
@@ -21,20 +21,20 @@ function ToDoErrorDisplay(props) {
       <View style={styles.header}>
         <View style={styles.svgView}>{icon}</View>
         <Text
-          variant={'h4'}
-          font={'Sequel651'}
-          color={R.color.blackShade4}
+          variant={'h6'}
+          font={'PoppinsMedium'}
+          color={R.color.mainColor}
           align={'center'}
-          gutterBottom={8}
+          gutterBottom={4}
           transform={'none'}>
           {heading}
         </Text>
         <Text
-          variant={'body2'}
-          font={'InterRegular'}
-          color={R.color.gray}
+          variant={'body3'}
+          font={'PoppinsRegular'}
+          color={R.color.black2}
           align={'center'}
-          style={{width: '70%'}}
+          style={{width: '80%'}}
           transform={'none'}>
           {text}
         </Text>
@@ -80,7 +80,7 @@ function ToDoErrorDisplay(props) {
     </View>
   );
 }
-export default ToDoErrorDisplay;
+export default EmptyListError;
 
 const styles = ScaledSheet.create({
   errorContainer: {

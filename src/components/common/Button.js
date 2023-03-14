@@ -12,6 +12,7 @@ import R from '@components/utils/R';
 
 const Button = props => {
   const sizes = {
+    xsm: R.unit.scale(30),
     sm: R.unit.scale(36),
     md: R.unit.scale(48),
     lg: R.unit.scale(56),
@@ -31,7 +32,7 @@ const Button = props => {
     iconColor = R.color.white,
     textStyles,
     variant = 'body2',
-    font = 'InterSemiBold',
+    font = 'RalewayMedium',
     iconSize = 16,
     activeOpacity,
     disabledButtonBGColor = R.color.disabledButtonColor,
@@ -39,8 +40,6 @@ const Button = props => {
     //functionality
     onPress,
     disabled,
-    isSocial,
-    socialType,
   } = props;
   return (
     <TouchableOpacity
@@ -113,7 +112,7 @@ const Button = props => {
 const styles = StyleSheet.create({
   mainBtn: {
     flexDirection: 'row',
-    borderRadius: R.unit.scale(10),
+    borderRadius: R.unit.scale(5),
     justifyContent: 'center',
     alignItems: 'center',
     alignSelf: 'center',
